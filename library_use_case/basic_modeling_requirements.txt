@@ -1,0 +1,46 @@
+A biblioteca precisa de um banco de dados para gerenciar seus livros, autores, editoras e empréstimos. Cada livro tem um único autor e uma editora responsável. Os usuários da biblioteca podem fazer empréstimos de livros, e é necessário rastrear quem pegou cada livro emprestado e quando.
+
+Com base nessas informações, vamos criar o modelo de banco de dados.
+
+Entidades principais:
+
+    Livro:
+        ID (identificador único)
+        Título
+        Ano de publicação
+        Autor_ID (chave estrangeira para a tabela Autor)
+        Editora_ID (chave estrangeira para a tabela Editora)
+
+    Autor:
+        ID (identificador único)
+        Nome
+        Nacionalidade
+
+    Editora:
+        ID (identificador único)
+        Nome
+        Localização
+
+    Empréstimo:
+        ID (identificador único)
+        Livro_ID (chave estrangeira para a tabela Livro)
+        Usuário_ID (chave estrangeira para a tabela Usuário)
+        Data de empréstimo
+        Data de devolução (pode ser nulo se o livro ainda não foi devolvido)
+
+    Usuário:
+        ID (identificador único)
+        Nome
+        Endereço
+        E-mail
+
+Relacionamentos:
+
+    Um livro tem um único autor, mas um autor pode ter escrito vários livros (relação 1 para N).
+    Um livro tem uma única editora, mas uma editora pode publicar vários livros (relação 1 para N).
+    Um usuário pode fazer vários empréstimos, mas cada empréstimo pertence a apenas um usuário (relação 1 para N).
+    Um livro pode ser emprestado várias vezes, mas cada empréstimo é para apenas um livro (relação 1 para N).
+
+Essa é apenas uma versão básica da modelagem de banco de dados para uma biblioteca. Você pode expandir esse modelo adicionando mais atributos ou entidades, dependendo das necessidades específicas do sistema.
+
+BY CHATGPT.

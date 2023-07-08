@@ -1,0 +1,42 @@
+A loja de comércio eletrônico precisa de um banco de dados para gerenciar seus produtos, categorias, clientes e pedidos. Cada produto pertence a uma única categoria. Os clientes podem fazer pedidos de produtos, e é necessário rastrear os detalhes de cada pedido, como os produtos comprados, a quantidade e o valor total.
+
+Com base nessas informações, vamos criar o modelo de banco de dados.
+
+Entidades principais:
+
+    Produto:
+        ID (identificador único)
+        Nome
+        Descrição
+        Preço
+        Categoria_ID (chave estrangeira para a tabela Categoria)
+
+    Categoria:
+        ID (identificador único)
+        Nome
+
+    Cliente:
+        ID (identificador único)
+        Nome
+        E-mail
+        Endereço
+
+    Pedido:
+        ID (identificador único)
+        Cliente_ID (chave estrangeira para a tabela Cliente)
+        Data do pedido
+        Valor total
+
+    Detalhes do Pedido:
+        Pedido_ID (chave estrangeira para a tabela Pedido)
+        Produto_ID (chave estrangeira para a tabela Produto)
+        Quantidade
+        Valor unitário
+
+Relacionamentos:
+
+    Um produto pertence a uma única categoria, mas uma categoria pode ter vários produtos (relação 1 para N).
+    Um cliente pode fazer vários pedidos, mas cada pedido pertence a apenas um cliente (relação 1 para N).
+    Um pedido pode ter vários detalhes do pedido, representando os produtos comprados, e cada detalhe do pedido pertence a apenas um pedido (relação 1 para N).
+
+BY CHATGPT.
